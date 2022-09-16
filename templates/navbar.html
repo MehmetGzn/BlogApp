@@ -1,0 +1,53 @@
+{% load static %}
+<script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+<nav class="navbar" style="background-color: #130779;">
+    <div class="container-fluid">
+      <div class="row d-flex align-items-center">
+        <img class="col p-2" src="{% static 'blog/images/blogging.png' %}" alt="" height="84" width="60">
+        <a class="navbar-brand text-light col" href="{% url 'home' %}"><h1>Blog App</h1></a>
+      </div>
+      <div class="dropdown">
+        <a href="{% url 'home' %}" class="btn">
+          <lord-icon
+            src="https://cdn.lordicon.com/hjbsbdhw.json"
+            trigger="hover"
+            colors="primary:#3a3347,secondary:#f24c00,tertiary:#b26836,quaternary:#ebe6ef"
+            state="hover"
+            style="width:50px;height:50px">
+          </lord-icon>
+        </a>
+        <button class="btn navBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <lord-icon
+            src="https://cdn.lordicon.com/ajkxzzfb.json"
+            trigger="hover"
+            colors="primary:#f4c89c,secondary:#a5e830"
+            style="width:50px;height:50px">
+          </lord-icon>
+        </button>
+        
+        {% if user.is_authenticated %}
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="{% url 'register' %}">Profile</a></li>
+             <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+          <a href="{% url 'home' %}" class="btn navBtn">
+            <lord-icon
+              src="https://cdn.lordicon.com/kofdvwty.json"
+              trigger="hover"
+              colors="primary:#ffc738,secondary:#d1e3fa"
+              style="width:50px;height:50px">
+            </lord-icon>
+          </a>
+        {% else %}
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+            <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+          </ul>
+          
+        {% endif %}
+          
+        
+      </div>
+    </div>
+  </nav>
+  
