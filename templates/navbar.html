@@ -2,8 +2,8 @@
 <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
 <nav class="navbar" style="background-color: #130779;">
     <div class="container-fluid">
-      <div class="row d-flex align-items-center">
-        <img class="col p-2" src="{% static 'blog/images/blogging.png' %}" alt="" height="84" width="60">
+      <div class="ms-2 row align-items-center">
+        <img class="col p-2" src="{% static 'images/appLogo.svg' %}" alt="" height="80" >
         <a class="navbar-brand text-light col" href="{% url 'home' %}"><h1>Blog App</h1></a>
       </div>
       <div class="dropdown">
@@ -27,7 +27,7 @@
         
         {% if user.is_authenticated %}
             <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="{% url 'register' %}">Profile</a></li>
+              <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
              <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
             </ul>
           <a href="{% url 'home' %}" class="btn navBtn">
@@ -40,7 +40,7 @@
           </a>
         {% else %}
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+            <li><a class="dropdown-item" href="{% url 'register' %}">Sign Up</a></li>
             <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
           </ul>
           

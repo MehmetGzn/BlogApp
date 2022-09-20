@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .PP{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            border: 8px solid #EF6253;
+        }
+    </style>
+    <title>Profile</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block container %}
+    <div class="container justify-content-center p-2">
+        <div class="container d-flex align-items-center p-4">
+            <img src="{{ user.profile.image.url }}" class="PP" alt="ProfileImage">
+            <h3 class="ms-4">{{ user.username|title }}</h3>
+        </div>
+        <div class="container d-flex align-items-center ms-4 mt-4">
+            <div>
+                <p class="badge bg-secondary fs-6">Email</p>
+            </div>
+            <p class="ms-4">{{ user.profile.email }}</p>
+        </div>
+        <div class="container d-flex ms-4 mt-4 ">
+            <div>
+                <p class="badge bg-secondary fs-6">Bio</p>
+            </div>
+            <p class="ms-4">{{ user.profile.bio }}</p>
+        </div>    
+        <div class="container mt-4">
+            <a class="btn btn-secondary" href="">Edit</a>
+        </div>
+    </div>
+    
+    {% endblock container %}
+</body>
+</html>

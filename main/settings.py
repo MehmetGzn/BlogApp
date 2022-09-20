@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # My Apps
     "blog",
+    "user",
     # Installed Apps
     "django.contrib.admin",
     "django.contrib.auth",
@@ -137,8 +138,9 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 
 LOGOUT_REDIRECT_URL = "/"
 LOGIN_REDIRECT_URL = "/"
 #Pskjfnvh20$ samizyrk
+#  3988%@hhskdjnfcu

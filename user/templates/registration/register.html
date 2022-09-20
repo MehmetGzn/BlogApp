@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% block title %}Sing Up{% endblock title %}
 {% block container %}
-<h2>Registration</h2>
+<h2>Join Now</h2>
 
 <form class="mt-4 container" action="" method="post">
 
@@ -12,8 +13,12 @@
 
     {{ form|crispy }}
 
-    <input class="btn btn-secondary mt-4" type="submit" value="Register">
+    <input class="btn btn-secondary mt-4" type="submit" value="Sign Up">
 
 </form>
+<div class="container">
+    <hr>
+    <p>Already have an account? <a class="ms-2" href="{% url 'login' %}">Sign In Now</a></p>
+</div>
 {% endblock container %}
     
